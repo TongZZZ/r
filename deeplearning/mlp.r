@@ -30,3 +30,23 @@ table(p.mon.mean>0.3,test.y)
 #         0  1
 #  FALSE 90 12
 #  TRUE   3 45
+
+test1 = read.table("C:\\Users\\e038291\\Desktop\\iono.csv",sep=",")
+vars = names(test1)
+data = as.data.frame(test1)
+i <- sample(1:350, 200)
+training <- data[i,]
+test <- data[-i,]
+training.x = training[,1:34]
+training.y = training[,35]
+test.x = test[,1:34]
+test.y = test[,35]
+f <- as.formula(paste("V35 ~", paste(vars[1:(length(vars)-1)], collapse="+")))
+mylogit <- glm(f, data = training, family = "binomial")
+#summary(mylogit)
+prob=predict(mylogit,test.x ,type=c("response"))
+table(prob>0.5, test.y)
+#     test.y
+#         0  1
+#  FALSE 85 17
+#  TRUE   8 41
