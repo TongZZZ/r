@@ -31,7 +31,7 @@ table(p.mon.mean>0.3,test.y)
 #  FALSE 90 12
 #  TRUE   3 45
 
-test1 = read.table("C:\\Users\\e038291\\Desktop\\iono.csv",sep=",")
+test1 = read.table("C:\\...\\iono.csv",sep=",")
 vars = names(test1)
 data = as.data.frame(test1)
 i <- sample(1:350, 200)
