@@ -463,7 +463,7 @@ object DBN {
     val hidden_layer_sizes: Array[Int] = Array(3, 3)
     val n_layers = hidden_layer_sizes.length
 	
-    val fea = scala.io.Source.fromFile("C:\\Users\\e038291\\Desktop\\iono_fea.csv")
+    val fea = scala.io.Source.fromFile("C:\\...\\iono_fea.csv")
     val train_X: Array[Array[Double]] = fea.getLines.map(line => {val tokens = line.split(","); tokens.map(_.toDouble)}).toArray
     fea.close()
 
@@ -477,7 +477,7 @@ object DBN {
 	//		Array(0, 0, 1, 1, 1, 0)
     //)
 	
-	val tar = scala.io.Source.fromFile("C:\\Users\\e038291\\Desktop\\iono_tar.csv")
+	val tar = scala.io.Source.fromFile("C:\\...\\iono_tar.csv")
     val train_Y: Array[Array[Double]] = tar.getLines.map(line => {val tokens = line.split(","); tokens.map(_.toDouble)}).toArray
     tar.close()
 
