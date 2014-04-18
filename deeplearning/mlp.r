@@ -6,7 +6,7 @@ w.mon <- monmlp.fit(x = x, y = y, hidden1 = 3, monotone = 1,n.ensemble = 15, bag
 p.mon <- monmlp.predict(x = x, weights = w.mon)
 p.mon.ma = matrix(unlist(attr(p.mon, "ensemble")),ncol = 15)
 p.mon.mean = apply(p.mon.ma,1, mean)
-table(p.mon.mean[p.mon.mean>0.4],y)
+table(p.mon.mean>0.4,y)
 #        0   1
 #  FALSE 223  11
 #  TRUE    1 115
